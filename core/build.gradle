@@ -29,7 +29,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api 'androidx.appcompat:appcompat:1.0.2'
-    api 'com.arello-mobile:moxy:1.5.6'
+    api 'tech.schoolhelper:moxy-x:1.7.0'
+    api 'tech.schoolhelper:moxy-x-androidx:1.7.0'
     api 'org.koin:koin-androidx-scope:2.0.0-rc-1'
     api 'android.arch.navigation:navigation-fragment:1.0.0'
     api 'androidx.core:core-ktx:1.0.1'

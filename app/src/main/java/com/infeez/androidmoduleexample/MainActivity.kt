@@ -2,12 +2,12 @@ package com.infeez.androidmoduleexample
 
 import android.os.Bundle
 import androidx.navigation.Navigation.findNavController
+import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.infeez.androidmoduleexample.navigation.Navigator
-import com.infeez.core.utils.XMvpAppCompatActivity
 import org.koin.android.ext.android.inject
 
-class MainActivity : XMvpAppCompatActivity(), StubView {
+class MainActivity : MvpAppCompatActivity(), StubView {
 
     @InjectPresenter
     lateinit var presenter: StubPresenter

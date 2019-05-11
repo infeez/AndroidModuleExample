@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.infeez.androidmoduleexample.R
-import com.infeez.core.utils.XMvpAppCompatFragment
 import kotlinx.android.synthetic.main.fr_feature.*
 
-class FeatureFragment : XMvpAppCompatFragment(), FeatureView {
+class FeatureFragment : MvpAppCompatFragment(), FeatureView {
 
     @InjectPresenter
     lateinit var presenter: FeaturePresenter

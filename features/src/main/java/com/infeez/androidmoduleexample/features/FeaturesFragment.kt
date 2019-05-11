@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.infeez.androidmoduleexample.R
-import com.infeez.core.utils.XMvpAppCompatFragment
 import kotlinx.android.synthetic.main.fr_features.*
 import org.koin.android.ext.android.get
 
-class FeaturesFragment : XMvpAppCompatFragment(), FeaturesView {
+class FeaturesFragment : MvpAppCompatFragment(), FeaturesView {
 
     @InjectPresenter
     lateinit var presenter: FeaturesPresenter
