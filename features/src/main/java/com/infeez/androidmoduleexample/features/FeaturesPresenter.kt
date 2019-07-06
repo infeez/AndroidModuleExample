@@ -2,9 +2,13 @@ package com.infeez.androidmoduleexample.features
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
 @InjectViewState
-class FeaturesPresenter(private val navigation: FeaturesNavigation) : MvpPresenter<FeaturesView>() {
+class FeaturesPresenter : MvpPresenter<FeaturesView>(), KoinComponent {
+
+    private val navigation: FeaturesNavigation by inject()
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()

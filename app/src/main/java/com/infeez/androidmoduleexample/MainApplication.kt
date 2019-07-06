@@ -13,7 +13,7 @@ class MainApplication : Application() {
 
         startKoin {
             androidContext(this@MainApplication)
-            modules(navigationModule)
+            modules(listOf(navigationModule, presentersModule))
         }
     }
 }

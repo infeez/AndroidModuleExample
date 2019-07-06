@@ -18,7 +18,7 @@ class FeaturesFragment : MvpAppCompatFragment(), FeaturesView {
     lateinit var presenter: FeaturesPresenter
 
     @ProvidePresenter
-    fun providePresenter() = FeaturesPresenter(get())
+    fun providePresenter(): FeaturesPresenter = get()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fr_features, container, false)
