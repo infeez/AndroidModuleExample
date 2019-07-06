@@ -33,4 +33,9 @@ class FeaturesFragment : MvpAppCompatFragment(), FeaturesView {
     override fun showLongMessage(text: String) {
         Toast.makeText(activity, text, Toast.LENGTH_LONG).show()
     }
+
+    companion object {
+
+        fun newInstance() = FeaturesFragment()
+    }
 }

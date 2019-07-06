@@ -38,6 +38,9 @@ class FeatureFragment : MvpAppCompatFragment(), FeatureView {
     companion object {
         private const val ID = "id"
         private const val DATA = "data"
-        fun createBundle(id: Int, data: String? = null) = bundleOf(ID to id, DATA to data)
+
+        fun newInstance(id: Int, data: String? = null) = FeatureFragment().apply {
+            this.arguments = bundleOf(ID to id, DATA to data)
+        }
     }
 }

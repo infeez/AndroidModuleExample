@@ -4,9 +4,17 @@ import com.infeez.androidmoduleexample.features.FeaturesNavigation
 import com.infeez.androidmoduleexample.features.FeaturesPresenter
 import com.infeez.androidmoduleexample.navigation.FeaturesNavigationImpl
 import com.infeez.androidmoduleexample.navigation.Navigator
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
+import ru.terrakok.cicerone.Cicerone
+
+fun modules() = listOf(navigationModule, presentersModule)
 
 val navigationModule = module {
+
+    single(named("Cicerone")) {
+        Cicerone.create()
+    }
 
     single {
         Navigator()
@@ -19,7 +27,7 @@ val navigationModule = module {
 
 val presentersModule = module {
 
-    factory {
-        FeaturesPresenter()
-    }
+    factory { MainPresenter() }
+
+    factory { FeaturesPresenter() }
 }

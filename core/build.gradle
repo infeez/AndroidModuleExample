@@ -32,7 +32,7 @@ dependencies {
     api 'tech.schoolhelper:moxy-x:1.7.0'
     api 'tech.schoolhelper:moxy-x-androidx:1.7.0'
     api 'org.koin:koin-androidx-scope:2.0.1'
-    api 'android.arch.navigation:navigation-fragment:1.0.0'
+    api 'ru.terrakok.cicerone:cicerone:5.0.0'
     api 'androidx.core:core-ktx:1.0.2'
 
     testImplementation 'junit:junit:4.12'

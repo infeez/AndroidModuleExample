@@ -1,17 +1,25 @@
 package com.infeez.androidmoduleexample.navigation
 
-import androidx.navigation.NavController
+import org.koin.core.KoinComponent
+import org.koin.core.get
+import org.koin.core.qualifier.named
+import ru.terrakok.cicerone.Cicerone
+import ru.terrakok.cicerone.Router
+import ru.terrakok.cicerone.android.support.SupportAppNavigator
 
-class Navigator {
+class Navigator : KoinComponent {
 
-    var navController: NavController? = null
+    private val cicerone: Cicerone<Router> = get(named("Cicerone"))
+    private var navigator: SupportAppNavigator? = null
 
-    fun bind(navController: NavController) {
-        this.navController = navController
+    fun bind(navigator: SupportAppNavigator) {
+        this.navigator = navigator
+        cicerone.navigatorHolder.setNavigator(navigator)
     }
 
     fun unbind() {
-        navController = null
+        cicerone.navigatorHolder.removeNavigator()
     }
 
+    val router = cicerone.router
 }
