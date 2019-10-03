@@ -1,0 +1,15 @@
+name: "sample-app tests"
+outputDir: "build/reports/marathon"
+retryStrategy:
+  type: "fixed-quota"
+  totalAllowedRetryQuota: 100
+  retryPerTestQuota: 2
+vendorConfiguration:
+  type: "Android"
+  applicationApk: "/opt/test/apk/app-debug.apk"
+  testApplicationApk: "/opt/test/apk/app-debug-androidTest.apk"
+  autoGrantPermission: true
+  instrumentationArgs:
+    debug: "true"
+  applicationPmClear: true
+  testApplicationPmClear: true
