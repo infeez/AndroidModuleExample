@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
-import com.arellomobile.mvp.MvpAppCompatFragment
-import com.arellomobile.mvp.presenter.InjectPresenter
-import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.infeez.androidmoduleexample.R
 import kotlinx.android.synthetic.main.fr_feature.*
+import moxy.MvpAppCompatFragment
+import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
 
 class FeatureFragment : MvpAppCompatFragment(), FeatureView {
 
@@ -20,8 +20,11 @@ class FeatureFragment : MvpAppCompatFragment(), FeatureView {
     @ProvidePresenter
     fun providePresenter() = FeaturePresenter(arguments!!.getInt(ID), arguments!!.getString(DATA))
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fr_feature, container, false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? = inflater.inflate(R.layout.fr_feature, container, false)
 
     override fun showLongMessage(text: String) {
         Toast.makeText(activity, text, Toast.LENGTH_LONG).show()

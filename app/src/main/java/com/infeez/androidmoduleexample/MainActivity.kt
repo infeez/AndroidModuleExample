@@ -1,15 +1,13 @@
 package com.infeez.androidmoduleexample
 
 import android.os.Bundle
-import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.presenter.InjectPresenter
-import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.infeez.androidmoduleexample.navigation.Navigator
+import moxy.MvpAppCompatActivity
+import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
-import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
-import ru.terrakok.cicerone.commands.Command
 
 class MainActivity : MvpAppCompatActivity(), MainView {
 

@@ -5,20 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.arellomobile.mvp.MvpAppCompatFragment
-import com.arellomobile.mvp.presenter.InjectPresenter
-import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.infeez.androidmoduleexample.R
 import kotlinx.android.synthetic.main.fr_features.*
+import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
 import org.koin.android.ext.android.get
 
 class FeaturesFragment : MvpAppCompatFragment(), FeaturesView {
 
-    @InjectPresenter
-    lateinit var presenter: FeaturesPresenter
-
-    @ProvidePresenter
-    fun providePresenter(): FeaturesPresenter = get()
+    private val presenter by moxyPresenter {
+        get<FeaturesPresenter>()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fr_features, container, false)

@@ -1,7 +1,7 @@
 package com.infeez.androidmoduleexample.features
 
-import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
+import moxy.InjectViewState
+import moxy.MvpPresenter
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 

@@ -1,5 +1,5 @@
 package com.infeez.androidmoduleexample
 
-import com.arellomobile.mvp.MvpView
+import moxy.MvpView
 
 interface MainView : MvpView
